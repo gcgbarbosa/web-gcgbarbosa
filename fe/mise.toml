@@ -1,0 +1,14 @@
+[tasks.fe]
+run = """
+pnpm run dev
+"""
+
+[tasks.sb]
+run = """
+pnpm storybook 
+"""
+
+[tasks.test]
+run = """
+pnpm run test
+"""

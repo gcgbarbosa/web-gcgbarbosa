@@ -5,14 +5,29 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
+import adapter from '@sveltejs/adapter-auto';
+
 const dirname =
   typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
-  // No options here: passing any would make SvelteKit ignore svelte.config.js
-  // (its aliases and preprocessors) — see @sveltejs/kit vite plugin.
-  plugins: [sveltekit()],
+  plugins: [
+    sveltekit({
+      compilerOptions: {
+        experimental: {
+          async: true
+        }
+      },
+      adapter: adapter(),
+      alias: {
+        'styled-system': './styled-system/*'
+      },
+      experimental: {
+        remoteFunctions: true
+      }
+    })
+  ],
 
   server: {
     fs: {

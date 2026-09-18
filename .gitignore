@@ -1,0 +1,11 @@
+node_modules/
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Tooling and runtime artifacts
+build-errors.log
+be/tmp/
+be/pb_data/

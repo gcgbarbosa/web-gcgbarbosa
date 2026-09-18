@@ -1,0 +1,22 @@
+[env]
+_.file = ".env"
+
+[tasks.fe]
+run = """
+cd fe && pnpm run dev
+"""
+
+[tasks.be-run]
+run = """
+cd be && go run . serve
+"""
+
+[tasks.be]
+run = """
+air
+"""
+
+[tasks.be-deps]
+run = """
+cd be && go mod tidy
+"""

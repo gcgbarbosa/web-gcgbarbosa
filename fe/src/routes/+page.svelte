@@ -3,6 +3,11 @@
   import { stack } from 'styled-system/patterns';
 </script>
 
+<svelte:head>
+	<title>hoi</title>
+	<meta name="description" content="chama patricinha pra dancar" />
+</svelte:head>
+
 <main
   class={css({
     p: '8',
